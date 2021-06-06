@@ -4,6 +4,12 @@ import { useEffect } from 'react';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Index() {
+  useEffect(() => {
+    const { referrer } = document;
+
+    alert(`Referer: ${referrer}`);
+  }, []);
+
   const { data, error } = useSWR('/api/getIp', fetcher);
 
   if (error) return <div>Failed to load</div>;
