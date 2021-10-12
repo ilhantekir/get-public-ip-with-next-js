@@ -7,7 +7,7 @@ export default function Index() {
   useEffect(() => {
     const { referrer } = document;
 
-    alert(`Referer: ${referrer}`);
+    console.log(`Referer: ${referrer}`);
   }, []);
 
   const { data, error } = useSWR('/api/getIp', fetcher);
